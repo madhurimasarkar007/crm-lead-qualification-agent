@@ -1,6 +1,6 @@
 # CRM Lead Qualification Agent
 
-An end-to-end automated pipeline that takes 45,211 raw customer records and delivers 50 ranked, RM-assigned, AI-briefed leads every Monday morning — replacing a manual SAS process that took 3–4 hours.
+An end-to-end automated pipeline that takes 45,211 raw customer records and delivers 50 ranked, RM-assigned, AI-briefed leads every Monday morning — replacing a manual SAS/SQL query process that took 3–4 hours.
 
 **Result: 5.6x lift over random selection. 66% of selected leads have a positive historical conversion label vs. 11.7% baseline.**
 
@@ -12,7 +12,7 @@ Each week, Relationship Managers (RMs) at a retail bank need to make outbound ca
 
 This pipeline answers: **who do you call, and what do you say?**
 
-It filters a phone outreach campaign funnel (45k → 5k → 1.6k → 157), applies a weighted composite scoring model, selects the top 50 leads, assigns them across 5 RMs, and generates a personalised AI briefing for each lead — delivered as a formatted Excel workbook.
+It filters a phone outreach campaign funnel — from 45,211 customers down to 5,000 targeted, 1,600 contacted, 157 deeply engaged — applies a weighted composite scoring model, selects the top 50 leads, assigns them across 5 RMs, and generates a personalised AI briefing for each lead — delivered as a formatted Excel workbook.
 
 ---
 
@@ -32,7 +32,7 @@ AI handles reasoning and orchestration. Python handles execution. This prevents 
 
 ```
 Step 1  download_dataset.py       Download UCI Bank Marketing dataset (45,211 rows)
-Step 2  simulate_campaign_funnel  Filter: Targeted (5k) → Contacted (1.6k) → Engaged (157)
+Step 2  simulate_campaign_funnel  Filter: Targeted (5,000) to Contacted (1,600) to Engaged (157)
 Step 3  qualify_and_score_leads   Exclude ineligible, score remaining 149 on 5 components
 Step 4  select_top_leads          Rank, assign tiers (A/B/C), round-robin RM assignment
 Step 5  generate_rm_briefing      Gemini 2.5 Flash → 3-part briefing per lead
@@ -65,7 +65,7 @@ Normalised within the qualified pool (not the full dataset) to preserve discrimi
 | Ground truth conversion — full dataset | 11.7% |
 | Lift | **5.6x** |
 | Pipeline runtime | ~5 minutes |
-| Time replaced | 3–4 hours of manual SAS work |
+| Time replaced | 3–4 hours of manual SAS/SQL query work |
 | Briefing cost (Gemini free tier) | $0 |
 
 ---
