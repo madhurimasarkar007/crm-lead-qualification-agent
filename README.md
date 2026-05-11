@@ -35,7 +35,7 @@ Step 1  download_dataset.py        Download UCI Bank Marketing dataset (45,211 r
 Step 2  simulate_campaign_funnel   Targeted (5,000) -> Contacted (1,600) -> Engaged (157)
 Step 3  qualify_and_score_leads    Exclude ineligible, score remaining 149 on 5 components
 Step 4  select_top_leads           Rank, assign tiers (A/B/C), round-robin RM assignment
-Step 5  generate_rm_briefing       Gemini 2.5 Flash generates a 3-part briefing per lead
+Step 5  generate_rm_briefing       LLM generates a 3-part briefing per lead (default: Gemini 2.5 Flash)
 Step 6  export_to_sheets           Formatted Excel workbook: Leads + Briefings + Audit tabs
 ```
 
@@ -166,7 +166,7 @@ tools/
   simulate_campaign_funnel.py # Step 2 — 3-stage phone outreach funnel
   qualify_and_score_leads.py  # Step 3 — exclusions + composite scoring
   select_top_leads.py         # Step 4 — top 50, tiers, RM assignment
-  generate_rm_briefing.py     # Step 5 — Gemini AI briefings (resume-safe)
+  generate_rm_briefing.py     # Step 5 — AI briefings, provider-agnostic (resume-safe)
   export_to_sheets.py         # Step 6 — formatted Excel export
   update_lead_status.py       # Friday — consolidate RM status updates
 workflows/
