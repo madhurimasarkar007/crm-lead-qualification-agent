@@ -1,0 +1,18 @@
+# Environment — never commit API keys
+.env
+credentials.json
+token.json
+
+# Generated data — regenerated each run, may contain PII
+.tmp/
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.Python
+
+# OS
+.DS_Store
+~$*
