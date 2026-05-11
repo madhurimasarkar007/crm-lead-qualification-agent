@@ -148,7 +148,7 @@ python tools/export_to_sheets.py
 
 Output: `.tmp/leads_report_YYYYMMDD.xlsx`
 
-The briefing step uses **Gemini 2.5 Flash** — switchable to any LLM API by updating the model config in `tools/generate_rm_briefing.py`. Built-in resume logic means the script picks up exactly where it left off if interrupted, with no wasted API calls.
+The briefing step uses **Gemini 2.5 Flash** (free tier). The provider is abstracted — switchable to Claude, GPT-4, or any LLM by changing one line in `.env`. No code changes required. Built-in resume logic means the script picks up exactly where it left off if interrupted, with no wasted API calls.
 
 ---
 

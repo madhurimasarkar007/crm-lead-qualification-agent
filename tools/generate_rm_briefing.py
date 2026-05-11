@@ -21,7 +21,7 @@ TMP_DIR = PROJECT_ROOT / ".tmp"
 INPUT_PATH = TMP_DIR / "top50_leads.csv"
 OUTPUT_PATH = TMP_DIR / "rm_briefings.csv"
 
-MODEL = "gemini-2.5-flash"
+MODEL = os.getenv("LLM_MODEL", "gemini-2.5-flash")
 RETRY_DELAYS = [5, 15, 30]
 
 SYSTEM_PROMPT = """You are a senior wealth management strategist helping Relationship Managers (RMs) \
