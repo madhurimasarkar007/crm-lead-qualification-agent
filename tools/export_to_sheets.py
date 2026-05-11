@@ -50,7 +50,6 @@ LEADS_COLS = {
     "duration":   "Engagement_s",
     "campaign":   "Campaign_Contacts",
     "poutcome":   "Prev_Outcome",
-    "y":          "Ground_Truth",
     "rm_assigned": "RM_Assigned",
     "status":     "Status",
     "notes":      "Notes",
